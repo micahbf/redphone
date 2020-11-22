@@ -6,6 +6,7 @@
 $bg-color: #222;
 $text-main-color: #eee;
 $text-heading-color: #a00;
+$text-code-color: #d88;
 $code-bg-color: #1d1f21;
 $link-color: #aec8dd;
 
@@ -208,7 +209,7 @@ header a, .title a, .published a, aside h3 a {
 }
 
 code {
-    color: #fcc;
+    color: $text-code-color;
     background-color: $code-bg-color;
 }
 
