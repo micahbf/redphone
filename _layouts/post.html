@@ -1,0 +1,33 @@
+---
+layout: default
+---
+<article>
+  <header>
+    {%- if page.title -%}
+      <h2 class="title"><a href="{{ page.url }}"> {{ page.title | escape }}</a></h2>
+    {%- endif -%}
+    <time class="published" datetime="{{ page.date | date_to_xmlschema }}">
+      <a href="{{ page.url }}">{{ page.date | date: "%B %e, %Y" }}</a>
+    </time>
+  </header>
+  <div class="body">
+    {{ content }}
+  </div>
+</article>
+
+{% if page.previous.url or page.next.url %}
+  <ul class="pagination">
+    {% if page.previous.url %}
+      <li class="prev">
+        <a href="{{ page.previous.url }}">
+          <img src="/assets/layout_images/arrow_prev.svg" alt="Previous post" class="inline-icon">&nbsp;{{ page.previous.title }}</a>
+      </li>
+    {% endif %}
+    {% if page.next.url %}
+      <li class="next">
+        <a href="{{ page.next.url }}">
+          {{ page.next.title }}&nbsp;<img src="/assets/layout_images/arrow_next.svg" alt="Next post" class="inline-icon"></a>
+      </li>
+    {% endif %}
+  </ul>
+{% endif %}

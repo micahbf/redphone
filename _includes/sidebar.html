@@ -1,0 +1,17 @@
+<h3>Contact</h3>
+<p>Get in touch with me via email at <a href="mailto:redphone@xlmpq.com">redphone@xlmpq.com</a>.</p>
+<p>I'm also on Instagram as <a href="https://www.instagram.com/micahbf/">@micahbf</a>.</p>
+
+<h3>Subscribe</h3>
+<p class="rss-subscribe">Subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
+
+<h3>Archives</h3>
+<ul>
+    {% for year in site.archives %}
+    <li>
+        <a href="{{ year.url }}">{{ year.posts[0].date | date: "%Y" }}</a>
+    </li>
+    {% endfor %}
+</ul>
+
+<p><a class="mobile-only" href="#">Back to top</a></p>

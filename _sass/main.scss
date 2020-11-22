@@ -1,0 +1,222 @@
+@import 'purecss-1.0.0-min.scss';
+@import 'purecss-1.0.0-grids-responsive-min.scss';
+@import 'fonts.scss';
+@import 'tomorrow_night.css';
+
+$bg-color: #222;
+$text-main-color: #eee;
+$text-heading-color: #a00;
+$code-bg-color: #1d1f21;
+$link-color: #aec8dd;
+
+* {
+    box-sizing: border-box;
+}
+
+// pure.css font override
+html, button, input, select, textarea, .pure-g [class *= "pure-u"] {
+    font-family: $body-font-stack;
+}
+
+code, kbd, pre, samp {
+    font-family: $code-font-stack;
+}
+
+// Layout
+
+body {
+    background-color: $bg-color;
+}
+
+.page-header {
+    height: 4em;
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+}
+
+.mobile-info {
+    @media (min-width: 48em) {
+        display: none;
+    }
+
+    font-family: $header-font-stack;
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white;
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+
+.mobile-only {
+    @media (min-width: 48em) {
+        display: none;
+    }
+}
+
+.content {
+    padding: 2em 1em 0;
+    color: $text-main-color;
+    background-color: $bg-color;
+
+    @media (min-width: 48em) {
+        padding: 2em 3em 0;
+    }
+}
+
+main {
+    @media (min-width: 48em) {
+        padding-right: 1em;
+    }
+}
+
+article {
+    padding-bottom: 2em;
+    margin: 0 auto;
+    max-width: 43em;
+
+    header {
+        margin: 0.83em 0;
+
+        h2 {
+            margin: 0;
+        }
+    }
+
+    &:first-child header {
+        margin-top: 0;
+    }
+
+    .body {
+        text-align: justify;
+    }
+
+    .footnotes {
+        font-size: small;
+        margin-top: 2.5em;
+
+        p {
+            margin: 0;
+        }
+    }
+}
+
+figure.highlight {
+    & > pre {
+        margin: 1em;
+    }
+
+    td.gutter {
+        padding-right: 1em;
+    }
+
+    .lineno {
+        color: #666;
+    }
+}
+
+footer {
+    text-align: center;
+    font-size: small;
+}
+
+.pagination {
+    display: flex;
+    list-style: none;
+    padding: 0;
+
+    li {
+        flex: 1 1 0;
+    }
+
+    .next {
+        text-align: right;
+    }
+}
+
+.blog-picture {
+  display: block;
+
+  img {
+      max-height: 80vh;
+      margin-left: auto;
+      margin-right: auto;
+  }
+}
+
+.blog-picture + .blog-picture {
+  margin-top: 0.5em;
+}
+
+hr {
+    width: 33%;
+}
+
+aside h3 {
+    margin-bottom: 0.1em;
+}
+
+aside p {
+    margin-top: 0.1em;
+}
+
+aside ul {
+    margin-top: 0.1em;
+    padding-left: 0;
+    list-style-type: none;
+}
+
+.archive-posts tr:nth-child(even) {
+    background-color: lighten($bg-color, 5%);
+}
+
+.archive-posts td {
+    padding: 0.1em 0.3em;
+}
+
+.archive-date {
+    text-align: right;
+}
+
+// Typography
+
+h1, h2, h3, h4 {
+    font-family: $header-font-stack;
+    font-weight: normal;
+    color: $text-heading-color;
+}
+
+header h1 {
+    font-size: 3em;
+    text-shadow: 1px 1px 0 #555;
+    margin-block-start: auto;
+    margin-block-end: -0.2em;
+    color: #b00;
+}
+
+a {
+    color: $link-color;
+    &:hover { color: darken($link-color, 10%); }
+}
+
+header a, .title a, .published a, aside h3 a {
+    color: inherit;
+    text-decoration: inherit;
+    &:hover { color: inherit; }
+}
+
+code {
+    color: #fcc;
+    background-color: $code-bg-color;
+}
+
+.location, .published {
+    font-family: $header-font-stack;
+    color: darken($text-main-color, 20%);
+}
+
+.inline-icon {
+    height: 1em;
+}

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  {%- include head.html -%}
+
+  <body>
+    {%- include header.html -%}
+
+    <div class="content pure-g">
+
+      <main class="pure-u-1 pure-u-md-3-4">
+          {{ content }}
+      </main>
+
+      <aside id="sidebar" class="pure-u-1 pure-u-md-1-4">
+          {%- include sidebar.html -%}
+      </aside>
+
+      <footer class="pure-u-1">
+        {%- include footer.html -%}
+      </footer>
+
+    </div>
+  </body>
+</html>

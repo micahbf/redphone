@@ -1,0 +1,31 @@
+---
+layout: default
+---
+
+<div class="home">
+  {{ content }}
+
+  {%- if site.posts.size > 0 -%}
+    {%- for post in paginator.posts -%}
+      <article>
+        <header>
+          {%- if post.title -%}
+            <h2 class="title"><a href="{{ post.url }}">{{ post.title | escape }}</a></h2>
+          {%- endif -%}
+          {%- if post.location -%}
+            <div class="location">{{ post.location | escape }}</div>
+          {%- endif -%}
+            <time class="published" datetime="{{ post.date | date_to_xmlschema }}">
+              <a href="{{ post.url }}">{{ post.date | date: "%B %e, %Y" }}</a>
+            </time>
+        </header>
+          <div class="body">
+            {{ post.content }}
+          </div>
+          <a class="u-url" href="{{ post.url | relative_url }}" hidden></a>
+      </article>
+    {%- endfor -%}
+    {% include pagination.html %}
+  {%- endif -%}
+
+</div>
